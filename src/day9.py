@@ -9,7 +9,7 @@ def is_low_point(row, col):
         r = row + dr
         c = col + dc
 
-        if 0 <= r and r < rows and 0 <= c and c < cols and heights[r][c] <= heights[row][col]:
+        if r in range(rows) and c in range(cols) and heights[r][c] <= heights[row][col]:
             return False
 
     return True
@@ -36,7 +36,7 @@ def get_basin_size(row, col):
         r = row + dr
         c = col + dc
 
-        if 0 <= r and r < rows and 0 <= c and c < cols:
+        if r in range(rows) and c in range(cols):
             size += get_basin_size(r, c)
 
     return size
